@@ -1,0 +1,13 @@
+---
+mysql_databases:
+ - name: "{{ db_name }}"
+   state: "present"
+
+mysql_users:
+ - name: "{{ db_username }}"
+   password: "{{ db_password }}"
+   priv: "{{ db_name }}.*:ALL"
+
+mysql_root_password: "{{ db_pwd_root }}"
+
+hostname: "{{ moodle_domain }}"

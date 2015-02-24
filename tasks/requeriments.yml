@@ -1,0 +1,9 @@
+---
+- name: Install requeriments
+  apt: name="{{ item }}"
+  with_items:
+    - git
+    - php5-mysql
+    - php5-intl
+    - php5-xmlrpc
+  notify: [ 'Restart php5-fpm' ]

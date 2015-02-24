@@ -1,0 +1,56 @@
+---
+# defaults file for moodle
+db_host: "127.0.0.1"
+db_pwd_root: "dificil"
+db_name: 'moodle'
+db_username: 'moodleAdmin'
+db_password: 'unaContrasenia'
+
+moodle_domain: "moodle.docker"
+moodle_path: "/opt/moodle"
+moodle_src: "{{ moodle_path }}/src"
+moodle_docs: "{{ moodle_path }}/moodleDocs"
+moodle_version: "MOODLE_28_STABLE"
+moodle_user: "moodle"
+
+
+php5_pools: [ '{{ pool_moodle }}']
+
+pool_moodle:
+  enabled: True
+  name: 'moodle'
+
+  user: "{{ moodle_user }}"
+  group: 'www-data'
+
+  listen: '/var/run/php5-fpm-{{ moodle_user}}.sock'
+
+  open_basedir: "/usr/share/php5:/tmp:{{ moodle_path }}:{{ moodle_docs }}"
+
+nginx_base_packages: [ 'nginx' ]
+
+nginx_default_status:
+  - '127.0.0.0/8'
+
+nginx_default_type: 'php5'
+  
+nginx_upstreams: [ '{{ nginx_moodle_php5 }}' ]
+nginx_moodle_php5:
+  enabled: True
+  name: '{{ moodle_user }}'
+  type: 'php5'
+  php5: '{{ moodle_user }}'
+
+# List of nginx server definitions
+nginx_servers: [ '{{ moodle_server_php5 }}' ]
+
+# Default nginx site
+# List and description of available parameters can be found in nginx server
+# templates: templates/etc/nginx/sites-available/*.conf.j2
+moodle_server_php5:
+  enabled: True
+  name: ["{{ moodle_domain }}"]
+  default: True
+  root: "{{ moodle_src }}"
+  php5: "{{ moodle_user }}"
+
