@@ -3,14 +3,21 @@ moodle
 
 Install moodle
 
-Requirements
-------------
-
-
-
 Role Variables
 --------------
 
+db_host: "127.0.0.1"
+db_pwd_root: "dificil"
+db_name: 'moodle'
+db_username: 'moodleAdmin'
+db_password: 'unaContrasenia'
+
+moodle_domain: "moodle.docker"
+moodle_path: "/opt/moodle"
+moodle_src: "{{ moodle_path }}/src"
+moodle_docs: "{{ moodle_path }}/moodleDocs"
+moodle_version: "MOODLE_28_STABLE"
+moodle_user: "moodle"
 
 Dependencies
 ------------
