@@ -39,7 +39,7 @@ Example Playbook
 
 - hosts: Docker-devel
   roles:
-  - { role: Nomanod.moodle, moodle_version: "MOODLE_28_STABLE" }
+  - { role: krahser.moodle, moodle_version: "MOODLE_28_STABLE" }
 
 
 License
