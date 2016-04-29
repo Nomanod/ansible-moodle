@@ -9,7 +9,7 @@
 
 
 - name: Getting Moodle
-  git: repo=git://git.moodle.org/moodle.git version="{{ moodle_version }}" dest="{{ moodle_src }}" accept_hostkey=yes
+  git: repo=https://github.com/moodle/moodle.git version="{{ moodle_version }}" dest="{{ moodle_src }}" accept_hostkey=yes
 
 - name: Configure Moodle
   template: src=config.php.j2 dest="{{ moodle_src }}/config.php"
