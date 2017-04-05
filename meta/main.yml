@@ -1,8 +1,10 @@
 ---
 galaxy_info:
-  author: Nadav Kavalerchik
+  author: Aldo Vizcaino
   description: Moodle install from git
-  company: Moodle Magic
+  company: Nomanod
+  contributors:
+    - Nadav Kavalerchik
   license: GPLv3
   min_ansible_version: 1.2
   platforms:

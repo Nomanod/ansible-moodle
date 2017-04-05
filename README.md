@@ -39,7 +39,7 @@ Example Playbook
 
 - hosts: mymoodle
   roles:
-  - { role: nadavkav.moodle, moodle_version: "MOODLE_30_STABLE" }
+  - { role: krahser.moodle, moodle_version: "MOODLE_30_STABLE" }
 
 
 License
@@ -47,7 +47,13 @@ License
 
 GPL-3
 
+Contributors
+------------
+
+- [Nadav Kavalerchik](https://github.com/nadavkav)
+
 Author Information
 ------------------
 
-Original code by krahser (krahser.moodle)
+Comments and pull request are welcome
+
