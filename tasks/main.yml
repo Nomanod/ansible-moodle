@@ -1,5 +1,5 @@
 ---
-- include: requeriments.yml
+- include: requirements.yml
 
 - name: Create user
   user: name="{{ moodle_user }}"
